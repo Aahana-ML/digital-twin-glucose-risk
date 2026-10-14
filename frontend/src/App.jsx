@@ -417,7 +417,7 @@ function App() {
 
       const response =
         await fetch(
-          'https://digital-twin-glucose-risk.onrender.com/predict_csv',
+          'https://digital-twin-glucose-risk.onrender.com/predict-csv',
           {
             method: 'POST',
             body: formData
