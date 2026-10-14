@@ -1,0 +1,27 @@
+{
+    "threshold": 0.74959767,
+    "history_minutes": 120,
+    "horizon_minutes": 30,
+    "sampling_minutes": 5,
+    "glucose_threshold": 180,
+    "event_duration_minutes": 30,
+    "dynamic_features": [
+        "glucose",
+        "calories",
+        "heart_rate",
+        "steps",
+        "basal_rate",
+        "bolus_volume_delivered",
+        "carb_input"
+    ],
+    "static_features": [
+        "gender",
+        "hba1c_percent",
+        "age_years",
+        "diabetes_duration_years",
+        "weight_kg",
+        "height_cm",
+        "treatment",
+        "bmi"
+    ]
+}
