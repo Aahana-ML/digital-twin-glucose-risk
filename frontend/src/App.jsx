@@ -241,8 +241,6 @@ function GlucoseChart({ glucoseHistory, timeHistory }) {
 
         <span>{startTime}</span>
 
-        <span>NOW</span>
-
         <span>{endTime}</span>
 
       </div>
