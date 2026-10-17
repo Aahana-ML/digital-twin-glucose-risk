@@ -180,8 +180,13 @@ Local installation and execution instructions will be documented after the repos
 
 ## 📑 Project Documents
 
-- **Presentation:** *Link to the final presentation PDF will be added here.*
-- **System architecture:** *Link to the architecture PDF will be added here.*
+- **System architecture:** *file:///C:/Users/DELL/Downloads/Architecture.pdf*
+
+- ## 📑 Project Presentation
+
+Explore the project presentation created in Canva:
+
+🎨 **[View the Presentation on Canva](https://canva.link/5dfqz51b7bhdexf)**
 
 ## 🚧 Limitations & Future Work
 
