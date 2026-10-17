@@ -180,7 +180,7 @@ Local installation and execution instructions will be documented after the repos
 
 ## 📑 Project Documents
 
-- **[System Architecture (PDF)](Architecture.pdf)**
+- **[System Architecture (PDF)](file:///C:/Users/DELL/Downloads/Architecture.pdf)**
 
 - ## 📑 Project Presentation
 
