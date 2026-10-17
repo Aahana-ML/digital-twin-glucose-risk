@@ -1,84 +1,210 @@
-# Meet Your Digital Twin: Precision Analytics for Glucose Homeostasis
+# 🩺 Meet Your Digital Twin
+### Personalized Glucose Risk Prediction 🧠
 
-## Project Overview
+An experimental machine-learning prototype that explores whether recent physiological data and patient characteristics can help estimate the risk of an upcoming high-glucose event.
 
-Meet Your Digital Twin is an experimental AI-powered prototype that estimates the risk of an upcoming qualifying high-glucose event using recent physiological time-series data and patient characteristics.
+**Developed for the Digital Twin Challenge 2026 — Happiest Health**
 
-Developed for the Digital Twin Challenge 2026.
+🌐 **Live Demo:** [Open the Application](https://digital-twin-glucose-risk-cef3z27v3-aahana-ml.vercel.app/)
 
-## Problem Statement
+💻 **Source Code:** [GitHub Repository](https://github.com/Aahana-ML/digital-twin-glucose-risk)
 
-Glucose levels can fluctuate over time. This project explores whether machine learning can use recent glucose readings and related physiological signals to estimate whether a qualifying high-glucose event may begin within the next 30 minutes.
+---
 
-## Healthcare Use Case
+## 🎯 Problem Statement
 
-The prototype demonstrates how historical physiological data and patient characteristics can be combined to explore personalized glucose-risk estimation. It is a research and educational proof of concept, not a clinically validated medical device.
+Glucose levels can fluctuate throughout the day, and identifying patterns that precede high-glucose events is a challenging time-series prediction problem.
 
-## Methodology
+This project explores whether machine learning can use the previous two hours of physiological measurements to estimate whether a qualifying high-glucose event may begin within the next 30 minutes.
 
-- **Input history:** Previous 2 hours of data sampled at 5-minute intervals.
-- **Event definition:** Glucose above 180 mg/dL for six consecutive readings.
-- **Prediction horizon:** Next 30 minutes.
-- **Selected model:** GRU with static patient characteristics.
-- **Evaluation:** Patient-wise train, validation, and held-out test sets.
+The goal is to demonstrate a personalized, data-driven approach to glucose-risk estimation through an interactive digital twin prototype.
 
-## Technical Stack
+## 💡 Healthcare Use Case
 
-- Python
-- TensorFlow / Keras
-- NumPy, Pandas, scikit-learn
-- FastAPI
-- React and the frontend tools used in this project
+The prototype combines recent physiological measurements with static patient characteristics to estimate the probability of an upcoming qualifying high-glucose event.
 
-## Model Evaluation
+It demonstrates how time-series modeling and patient-specific information can be integrated into an experimental healthcare AI application.
 
-On the held-out test set, the selected model achieved:
+## 📊 Dataset & Features
 
-- ROC-AUC: 0.856
-- PR-AUC: 0.331
-- Recall: 67.7%
-- Precision: 26.6%
+This project uses the **HUPA-UCM Diabetes Dataset**, published on Mendeley Data.
 
-These results reflect the experimental evaluation and should not be interpreted as evidence of clinical effectiveness.
+- **Participants:** 25 people with Type 1 diabetes
+- **Sampling interval:** 5 minutes
+- **Data type:** Physiological time-series measurements
 
-## Repository Structure
+### Features used
 
-- `api/` — API and backend components
-- `frontend/` — Web interface
-- `models/` — Model-related files
-- `notebooks/` — Experiments and analysis
-- `reports/` — Project reports
-- `tests/` — Tests
-- `requirements.txt` — Python dependencies
+**Dynamic features**
+- Glucose
+- Calories
+- Heart rate
+- Steps
+- Basal insulin rate
+- Bolus insulin volume delivered
+- Carbohydrate input
 
-## Setup
+**Static patient characteristics**
+- Age
+- Gender
+- Height and weight
+- BMI
+- HbA1c
+- Diabetes duration
+- Treatment
 
-Installation and execution instructions will be added after deployment configuration is verified.
+### 📚 Dataset Attribution
 
-## Demo Video
+Hidalgo, J. Ignacio; Alvarado, Jorge; Botella, Marta; Aramendi, Aranzazu; Velasco, J. Manuel; Garnica, Oscar (2024). *HUPA-UCM Diabetes Dataset*. Mendeley Data, Version 1.
 
-*To be added: unlisted YouTube demo video.*
+[https://doi.org/10.17632/3hbcscwz44.1](https://doi.org/10.17632/3hbcscwz44.1)
 
-## Architecture Diagram
+## ⚙️ Methodology
 
-*To be added: architecture diagram in PDF or PPT format.*
+The prediction task is formulated as a binary classification problem.
 
-## Presentation
+| Component | Description |
+|---|---|
+| Historical input | Previous 2 hours |
+| Sampling interval | 5 minutes |
+| Prediction horizon | Next 30 minutes |
+| Event threshold | Glucose strictly above 180 mg/dL |
+| Event duration | Six consecutive readings above the threshold |
+| Task | Predict whether a qualifying event begins within the prediction horizon |
 
-*To be added: final project presentation in PDF or PPT format.*
+Prediction windows that fall inside an already active qualifying event are excluded from evaluation.
 
-## Team Details
+### 🔒 Preventing Data Leakage
 
-*Add required team-member details.*
+To evaluate generalization to unseen participants, the dataset was split by participant rather than randomly splitting individual time windows.
 
-## College / Incubator Information
+- **Training:** 17 participants
+- **Validation:** 4 participants
+- **Testing:** 4 participants
 
-*Add the affiliation information required by the challenge organizers.*
+Preprocessing transformations were fitted using training data only. The classification threshold was selected on the validation set and then held fixed for the final test evaluation.
 
-## License
+## 🧠 Model Experiments
 
-*Add the selected open-source license and include the corresponding `LICENSE` file.*
+Several approaches were explored and compared:
 
-## Disclaimer
+- Logistic Regression
+- Convolutional Neural Network (CNN)
+- CNN with engineered features
+- Long Short-Term Memory (LSTM)
+- Gated Recurrent Unit (GRU)
 
-This project is an experimental proof of concept. It is not intended for diagnosis, treatment decisions, or replacement of glucose monitoring or professional medical advice.
+The experiments investigated how different sequence models performed and whether adding static patient characteristics improved prediction.
+
+The selected prototype uses a **GRU model with static patient characteristics** to explore a digital-twin approach that combines recent physiological patterns with patient-specific information.
+
+## 📈 Results & Evaluation
+
+The selected model was evaluated on a held-out test set containing participants not used during training or validation.
+
+| Metric | Test result |
+|---|---:|
+| ROC-AUC | 0.856 |
+| PR-AUC | 0.331 |
+| Recall | 67.7% |
+| Precision | 26.6% |
+| F1-score | 0.382 |
+
+### What do these results mean?
+
+- **Recall of 67.7%:** The model detected approximately 68% of the positive test windows.
+- **Precision of 26.6%:** Approximately 27% of the windows classified as positive were actually positive.
+- **ROC-AUC of 0.856:** The model showed an ability to distinguish positive from negative examples across different thresholds.
+
+The results also reveal a substantial false-alarm rate. Performance varied across held-out participants, highlighting the challenges of generalizing across individuals.
+
+These findings are experimental and do not establish clinical effectiveness.
+
+## 🌐 Live Demo
+
+Try the deployed prototype:
+
+**[Meet Your Digital Twin — Open App](https://digital-twin-glucose-risk-cef3z27v3-aahana-ml.vercel.app/)**
+
+The application allows users to provide a compatible physiological CSV file and patient characteristics, run the model, and view the resulting risk estimate alongside glucose-history visualizations.
+
+The uploaded data must satisfy the input format and sampling requirements expected by the application.
+
+## 🏗️ System Architecture
+
+The application uses a frontend-backend architecture:
+
+1. **Frontend:** React application deployed on Vercel.
+2. **Backend:** FastAPI service deployed on Render.
+3. **Inference:** The trained GRU model processes the input history and patient characteristics.
+4. **Results:** The application returns a risk estimate for display in the interface.
+
+**API documentation:** [Open FastAPI Docs](https://digital-twin-glucose-risk.onrender.com/docs#/default/predict_csv_predict_csv_post)
+
+*The architecture diagram will be added here.*
+
+## 🛠️ Tech Stack
+
+- **Language:** Python
+- **Data processing:** NumPy, Pandas
+- **Machine learning:** scikit-learn
+- **Deep learning:** TensorFlow / Keras
+- **Backend:** FastAPI
+- **Frontend:** React
+- **Frontend deployment:** Vercel
+- **Backend deployment:** Render
+- **Experimentation:** Jupyter Notebook
+
+## 📁 Repository Structure
+
+```text
+digital-twin-glucose-risk/
+├── api/              # Backend API
+├── frontend/         # Web application
+├── models/           # Model-related components
+├── notebooks/        # Experiments and analysis
+├── reports/          # Project reports
+├── tests/            # Tests
+└── requirements.txt  # Python dependencies
+```
+
+## 🚀 Setup
+
+The application is deployed and can be accessed through the live demo link above.
+
+Local installation and execution instructions will be documented after the repository's dependency files, model artifacts, environment configuration, and startup commands have been verified.
+
+## 🎥 Demo Video
+
+*Coming soon — a demonstration of the deployed application and its prediction workflow.*
+
+## 📑 Project Documents
+
+- **Presentation:** *Link to the final presentation PDF will be added here.*
+- **System architecture:** *Link to the architecture PDF will be added here.*
+
+## 🚧 Limitations & Future Work
+
+- The evaluation uses only four held-out participants, limiting the conclusions that can be drawn about generalization.
+- The relatively low precision indicates a substantial number of false-positive predictions.
+- Performance differs across participants.
+- The model has not been clinically validated.
+- The prediction threshold and event definition are operational choices for this experiment, not universal medical thresholds.
+
+### Future improvements
+
+- Evaluate performance on more independent participants.
+- Investigate methods to reduce false alarms while maintaining useful recall.
+- Explore calibration and alternative classification thresholds.
+- Conduct further validation before considering any real-world healthcare application.
+
+## ⚠️ Medical Disclaimer
+
+This project is an experimental proof of concept developed for educational and research purposes. It is not a clinically validated medical device and must not be used for diagnosis, treatment decisions, insulin dosing, or emergency assessment.
+
+Its predictions do not replace glucose monitoring, medical guidance, or advice from qualified healthcare professionals.
+
+## 📄 License
+
+The project license will be specified here once selected. See the dataset attribution above for the separate dataset citation and applicable usage terms.
+
