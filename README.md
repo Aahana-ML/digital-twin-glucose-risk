@@ -141,7 +141,7 @@ The application uses a frontend-backend architecture:
 
 **API documentation:** [Open FastAPI Docs](https://digital-twin-glucose-risk.onrender.com/docs#/default/predict_csv_predict_csv_post)
 
-*The architecture diagram will be added here.*
+**[System Architecture (PDF)](Architecture.pdf)**
 
 ## 🛠️ Tech Stack
 
@@ -178,10 +178,6 @@ Local installation and execution instructions will be documented after the repos
 
 *Coming soon — a demonstration of the deployed application and its prediction workflow.*
 
-## 📑 Project Documents
-
- **[System Architecture (PDF)](Architecture.pdf)**
-
 ## 📑 Project Presentation
 
 Explore the project presentation created in Canva:
@@ -213,5 +209,21 @@ Its predictions do not replace glucose monitoring, medical guidance, or advice f
 
 ## 📄 License
 
-The project license will be specified here once selected. See the dataset attribution above for the separate dataset citation and applicable usage terms.
+This project is licensed under the **MIT License**. See the [LICENSE](LICENSE) file for details.
+
+The HUPA-UCM Diabetes Dataset is a separate resource and remains subject to its own licensing and usage terms. See the [dataset attribution](https://doi.org/10.17632/3hbcscwz44.1) for details.
+
+## 🎓 College / Incubator Information
+
+**Affiliation:** Independent Learner
+
+This project was developed independently and is not being presented as a project affiliated with a college, incubator, or institution.
+
+## 👥 Team Details
+
+**Project Developer:** Aahana Panwar
+
+This project was independently developed for the Digital Twin Challenge 2026. The work includes dataset exploration, prediction-task formulation, model experimentation and evaluation, and deployment of the prototype.
+
+
 
