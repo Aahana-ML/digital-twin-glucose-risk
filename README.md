@@ -187,7 +187,8 @@ Local installation and execution instructions will be documented after the repos
 Explore the project presentation created in Canva:
 
 🎨 **[View the Presentation on Canva](https://canva.link/5dfqz51b7bhdexf)**
-📄  **[View or download the presentation (PDF)](Meet_Your_Digital_Twin_Challenge_2026 (1).pdf)**
+
+📄 **[View or download the presentation (PDF)](Meet_Your_Digital_Twin_Challenge_2026 (1).pdf)**
 
 ## 🚧 Limitations & Future Work
 
