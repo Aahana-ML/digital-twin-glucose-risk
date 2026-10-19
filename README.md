@@ -5,7 +5,7 @@ An experimental machine-learning prototype that explores whether recent physiolo
 
 **Developed for the Digital Twin Challenge 2026 — Happiest Health**
 
-🌐 **Live Demo:** [Open the Application](https://digital-twin-glucose-risk-cef3z27v3-aahana-ml.vercel.app/)
+🌐 **Live Demo:** [Open the Application](https://digital-twin-glucose-risk.vercel.app)
 
 💻 **Source Code:** [GitHub Repository](https://github.com/Aahana-ML/digital-twin-glucose-risk)
 
@@ -124,7 +124,7 @@ These findings are experimental and do not establish clinical effectiveness.
 
 Try the deployed prototype:
 
-**[Meet Your Digital Twin — Open App](https://digital-twin-glucose-risk-cef3z27v3-aahana-ml.vercel.app/)**
+**[Meet Your Digital Twin — Open App](https://digital-twin-glucose-risk.vercel.app)**
 
 The application allows users to provide a compatible physiological CSV file and patient characteristics, run the model, and view the resulting risk estimate alongside glucose-history visualizations.
 
@@ -139,7 +139,7 @@ The application uses a frontend-backend architecture:
 3. **Inference:** The trained GRU model processes the input history and patient characteristics.
 4. **Results:** The application returns a risk estimate for display in the interface.
 
-**API documentation:** [Open FastAPI Docs](https://digital-twin-glucose-risk.onrender.com/docs#/default/predict_csv_predict_csv_post)
+**API Documentation:** [Open FastAPI Docs](https://digital-twin-glucose-risk.onrender.com/docs)
 
 **[System Architecture (PDF)](Architecture.pdf)**
 
@@ -221,7 +221,16 @@ This project was developed independently and is not being presented as a project
 
 ## 👥 Team Details
 
-**Project Developer:** Aahana Panwar
+- **Team Name:** Meet Your Digital Twin
+- **Team Size:** 1
+- **Team Member:** Aahana Panwar
+- **Role:** Solo Developer — Machine Learning, Data Analysis, Model Evaluation, Backend Integration, and Deployment
+
+### 🤖 AI-Assisted Development
+
+AI tools were used extensively to assist with UI design and frontend/web development, including generating and refining interface components and troubleshooting implementation issues. AI assistance was also used where appropriate during development.
+
+The machine learning workflow, including dataset exploration, prediction-target design, model experimentation, evaluation, and project-specific decisions, was developed and assessed as part of the project work.
 
 This project was independently developed for the Digital Twin Challenge 2026. The work includes dataset exploration, prediction-task formulation, model experimentation and evaluation, and deployment of the prototype.
 
