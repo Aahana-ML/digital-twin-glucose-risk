@@ -174,9 +174,11 @@ The application is deployed and can be accessed through the live demo link above
 
 Local installation and execution instructions will be documented after the repository's dependency files, model artifacts, environment configuration, and startup commands have been verified.
 
-## 🎥 Demo Video
+## 🎥 Project Demo Video
 
-*Coming soon — a demonstration of the deployed application and its prediction workflow.*
+Watch the complete demonstration of **Meet Your Digital Twin: Personalized Glucose Risk Prediction**, developed for the Happiest Health Digital Twin Challenge 2026.
+
+▶️ **[Watch the Project Demo on YouTube](https://youtu.be/Z35yf0MZ2xg)**
 
 ## 📑 Project Presentation
 
@@ -185,6 +187,7 @@ Explore the project presentation created in Canva:
 🎨 **[View the Presentation on Canva](https://canva.link/oiz5x7qbcy0dmcr)**
 
 📄 **[View or download the presentation (PDF)](Meet_Your_Digital_Twin_Challenge_2026%20%281%29.pdf)**
+
 
 ## 🚧 Limitations & Future Work
 
